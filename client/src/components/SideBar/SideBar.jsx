@@ -4,7 +4,7 @@ import InstagramLogo from '../../assets/InstagramLogo.png';
 import LinkedInLogo from '../../assets/LinkedInLogo.png';
 import WhatsappLogo from '../../assets/WhatsappLogo.png';
 import RadialMenu from './RadialMenu';
-import './SideBar.css';
+import './Sidebar.css';
 
 function SideBar() {
     return (
