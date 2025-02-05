@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --background-primary : black;
+    --primary-shade-1 : #DA54EB;
+    --black-white-border : white;
+    --default-font-color : white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "M PLUS 2", sans-serif;
+    color: var(--default-font-color);
+}
+body{
+    min-height: 100vh;
+}
+
+.slide-down{
+    animation: slide-down 1s ease forwards;
+}
+
+@keyframes slide-down {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+.slide-up{
+    animation: slide-up 1s ease forwards;
+}
+
+@keyframes slide-up {
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+.slide-right{
+    animation: slide-right 1s ease forwards;
+}
+
+@keyframes slide-right {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.slide-left{
+    animation: slide-left 1s ease forwards;
+}
+
+@keyframes slide-left {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

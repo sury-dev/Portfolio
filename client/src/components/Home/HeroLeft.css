@@ -1,0 +1,103 @@
+.hero-left{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+}
+.hero-left p{
+    font-size: 40px;
+}
+#hh{
+    font-size: 80px;
+    line-height: 80px;
+    background: linear-gradient(90deg, #A27E41,#DA54EB);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    letter-spacing: 5px;
+    width: max-content;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+/* Tech - Known Slider */
+
+.tech-known{
+    margin-top: 50px;
+    width: var(--slider-width);
+    height: var(--height);
+    overflow: hidden;
+    /* mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent); */
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+}
+.tech-known .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.tech-known .list .tk-item{
+    /* width: var(--width); */
+    height: var(--height);
+    position: absolute;
+    left: var(--slider-width);
+    transition: 0.2s ease-in-out;
+    animation: autoRun2 calc(var(--quantity) * 1s) linear infinite;
+    animation-delay: calc(((var(--quantity) * 1s) / var(--quantity)) * (var(--position) - 1));
+    transform: scale(0.9);
+}
+.tech-known:hover .tk-item{
+    animation-play-state: paused!important;
+    filter: brightness(0.5);
+}
+.tech-known .tk-item:hover{
+    filter: brightness(1);
+    transform: scale(1);
+}
+@keyframes autoRun2{
+    from{
+        left: var(--slider-width);
+    }
+    to{
+        left: calc(var(--width) * -1);
+    }
+}
+.tech-known .list .tk-item img{
+    height: 100%;
+    /* width: 100%; */
+}
+/* smaller desktop screens */
+@media (max-width: 1024px) {
+    .hero-left{
+        padding: 0px 20px;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-left p{
+        font-size: 2rem;
+    }
+    #hh{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .tech-known{
+        width: calc(100vw - 40px);
+        mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
+        margin-top: 20px;
+    }
+    .tech-known .list .tk-item{
+        left: calc(100vw - 40px);
+        transform: scale(0.75);
+    }
+    @keyframes autoRun2{
+        from{
+            left: calc(100vw - 40px);
+        }
+        to{
+            left: calc(var(--width) * -1);
+        }
+    }
+}

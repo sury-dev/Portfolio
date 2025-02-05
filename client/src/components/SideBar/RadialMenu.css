@@ -1,0 +1,136 @@
+.radial-menu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 97;
+    height: 300px;
+    width: 300px;
+    overflow: hidden; 
+}
+
+.radial-menu::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 300px;
+    transform: translate(-50px, -55px) scale(0);
+    border-radius: 50%;
+    z-index: 90; /* Place behind the menu items */
+    opacity: 0;
+    visibility: hidden; /* Ensure it's completely hidden when closed */
+    transition: opacity 0.s ease, visibility 0.s ease, transform 0.s ease; /* Smoothly reveal the element */
+    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+    background-color: rgba(255, 255, 255, 0.5); /* Light theme background */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+    border: 1px solid currentColor;
+}
+
+
+.radial-menu.radial-open::before {
+    transform: translate(-50px, -55px) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.radial-icons {
+    position: absolute;
+    width: 40px;
+    left: calc(50% - 30px);
+    transform-origin: 150px;
+    transform: rotate(0deg) translateX(calc(150px - 50%));
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay:calc(var(--radial-index) * 0.1s);
+    opacity: 0;
+    z-index: 96;
+}
+
+.radial-menu.radial-open .radial-icons {
+    transform: rotate(calc(var(--radial-index) * 90deg / 3));
+    opacity: 1;
+}
+
+.radial-icons > a > img {
+    transition: transform 0.3s ease;
+    transform: rotate(calc(var(--radial-index) * 90deg / -3));
+}
+
+.radial-icons > a > img:hover {
+    transform: rotate(calc(var(--radial-index) * 90deg / -3)) scale(1.2);
+}
+
+.radial-icons > a > img:active {
+    transform: rotate(calc(var(--radial-index) * 90deg / -3)) scale(1);
+}
+
+.radial-menu-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 98;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.radial-menu.radial-menu.radial-open .radial-menu-toggle {
+    transform: scale(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .radial-menu::before {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .radial-menu-toggle {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.radial-menu-toggle img {
+    width: 30px;
+    height: 30px;
+}
+
+.close-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    position: relative;
+}
+
+.close-icon-line {
+    width: 1.5rem;
+    height: 2px;
+    background: currentColor;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.close-icon-line:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.close-icon-line:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+    .radial-menu {
+    display: flex;
+    }
+}

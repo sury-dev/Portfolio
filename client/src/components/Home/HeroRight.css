@@ -1,0 +1,101 @@
+.hero-right{
+    width: 605px;
+    height: 80%;
+    min-height: 60vh;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.name-slider{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    mask-image:linear-gradient(90deg, transparent, black 30% 70%, transparent);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.name-slider h1{
+    font-size: 325px;
+    margin-top: -70px;
+    font-style: italic;
+    background: linear-gradient(90deg, #A27E41,#DA54EB, #A27E41,#DA54EB);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 550;
+    letter-spacing: 5px;
+    position: absolute;
+    animation: autoRun3 20s linear infinite;
+}
+
+.hero-right img{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    min-height: 60vh;
+    width: auto;
+    left: 50%;
+    transform: translate(-50%);
+}
+#vignette{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+@keyframes autoRun3{
+    from{
+        transform: translateX(calc(50vw - 50px));
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* smaller screens */
+@media (max-width: 768px) {
+    .hero-right{
+        width: 100%;
+        height: 100%;
+        min-height: 50vh;
+        max-width: 100vw;
+        overflow: hidden;
+        position: relative;
+    }
+    .name-slider{
+        width: 100%;
+        max-width: 100vw;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        mask-image:linear-gradient(90deg, transparent, black 30% 70%, transparent);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .name-slider h1{
+        font-size: 200px;
+    }
+    .hero-right img{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        min-height: 50vh;
+        width: auto;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    #vignette{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    @keyframes autoRun3{
+        from{
+            transform: translateX(calc(50vw - 50px));
+        }
+        to{
+            transform: translateX(-100%);
+        }
+    }
+}
