@@ -3,6 +3,9 @@ import './App.css'
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import HomePage from './components/Home/HomePage';
+import Projects from './components/Projects/Projects';
+import Certifications from './components/Certifications/Certifications';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -38,15 +41,13 @@ function App() {
       </div>
     </div>
   ) : (
-      <div className=" bg-white dark:bg-black text-black dark:text-white h-screen w-screen min-h-min min-w-min overflow-hidden">
+      <div className=" bg-white dark:bg-black text-black dark:text-white h-screen w-screen min-h-min min-w-min overflow-hidden gap-6 flex flex-col">
         <Header />
         <SideBar />
         <HomePage />
-        {/* <img className='slide-right' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Christina_Chong.jpg/800px-Christina_Chong.jpg" alt="" />
-        <img className='slide-right' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Christina_Chong.jpg/800px-Christina_Chong.jpg" alt="" />
-        <img className='slide-right' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Christina_Chong.jpg/800px-Christina_Chong.jpg" alt="" />
-        <img className='slide-right' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Christina_Chong.jpg/800px-Christina_Chong.jpg" alt="" />
-        <img className='slide-right' src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Christina_Chong.jpg/800px-Christina_Chong.jpg" alt="" /> */}
+        <Projects />
+        <Certifications />
+        < Footer />
       </div>
   )
 }

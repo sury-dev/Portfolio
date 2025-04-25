@@ -3,7 +3,7 @@
     width: 100%;
     padding: 0px 100px;
     background: transparent;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 999;
@@ -32,4 +32,21 @@
     .navbar{
         display: none;
     }
+}
+.resumeDownloadBtn{
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    border: 1px solid white;
+}
+.resumeDownloadBtn:hover{
+    background: linear-gradient(90deg, #f7c164, #ed61ff);
+    transform: scale(1.05);
+    color: black;
+    border: none;
 }

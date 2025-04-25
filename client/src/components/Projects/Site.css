@@ -1,0 +1,128 @@
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* updated from center to stretch */
+    gap: 20px;
+    height: 60vh; /* or any fixed height like 500px, as needed */
+}
+
+.project-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 1.5rem;
+    
+}
+
+.project-info {
+    width: 35vw;
+    border: 2px solid white;
+    height: 100%; /* updated to take full height of the container */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(30px);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.project-preview::-webkit-scrollbar{
+    width: 0;
+    display: none;
+}
+.project-preview img{
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    animation: previewScroll 10s linear infinite;
+}
+
+.project-preview:hover img{
+    animation: previewScroll 0s linear infinite;
+    animation-play-state: running;
+}
+.project-preview:hover{
+    cursor: pointer;
+    overflow: scroll;
+}
+
+@keyframes previewScroll {
+    0%{
+        top: 0;
+    }
+    2%{
+        top: 0;
+    }
+    48%{
+        top: -100%;
+    }
+    52%{
+        top: -100%;
+    }
+    98%{
+        top: 0;
+    }
+    100%{
+        top: 0;
+    }
+}
+.project-info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.project-info-content h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+.project-info-content p {
+    font-size: 1.2rem;
+    /* font-weight: 300; */
+    margin: 0;
+    color: white;
+    text-align:left;
+}
+.other-detail-container{
+    /* margin: auto; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+.project-cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.textBox{
+    width: max-content;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border-width: 1px;
+    transition: all 0.3s ease-in-out;
+}
+.textBox:hover{
+    cursor: pointer;
+    background: black;
+}

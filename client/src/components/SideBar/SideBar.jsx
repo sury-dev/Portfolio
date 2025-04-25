@@ -11,10 +11,10 @@ function SideBar() {
         <>
             <RadialMenu />
             <div className="social-icons">
-                <img src={InstagramLogo} alt="Instagram" />
-                <img src={GmailLogo} alt="Gmail" />
-                <img src={LinkedInLogo} alt="LinkedIn" />
-                <img src={WhatsappLogo} alt="WhatsApp" />
+                <a href="https://www.instagram.com/suryansh_pandey_3011/" target="_blank"><img src={InstagramLogo} alt="Instagram" /></a>
+                <a href="mailto:suryanshpandey3011@gmail.com" target="_blank"><img src={GmailLogo} alt="Gmail" /></a>
+                <a href="https://www.linkedin.com/in/suryanshpandey3011/" target="_blank"><img src={LinkedInLogo} alt="LinkedIn" /></a>
+                <a href="https://wa.me/+917973946576" target="_blank"><img src={WhatsappLogo} alt="WhatsApp" /></a>
             </div>
         </>
     );

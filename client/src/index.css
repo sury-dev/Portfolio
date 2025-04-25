@@ -19,6 +19,9 @@
 body{
     min-height: 100vh;
 }
+*::-webkit-scrollbar{
+    width: 0;
+}
 
 .slide-down{
     animation: slide-down 1s ease forwards;
@@ -70,4 +73,12 @@ body{
     100%{
         transform: translateX(0%);
     }
+}
+.glassMorph{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+}
+html{
+    scroll-behavior: smooth;
 }

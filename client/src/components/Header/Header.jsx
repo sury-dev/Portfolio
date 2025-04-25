@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import HamBurgerMenu from './HamBurgerMenu'
 import './Header.css'
@@ -28,40 +28,30 @@ function Header() {
         <nav className='navbar slide-down'>
             <ul>
                 <li>
-                    <NavLink to='/'
-                        className={({ isActive }) =>
-                            `navBtns ${isActive ? 'text-[#6A0DAD] dark:text-[#DA54EB]' : 'text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]'}`
-                        }>
+                    <a href="#home" className="navBtns text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]">
                         Home
-                    </NavLink>
+                    </a>
                 </li>
                 <li>
-                    <NavLink to='/work'
-                        className={({ isActive }) =>
-                            `navBtns ${isActive ? 'text-[#6A0DAD] dark:text-[#DA54EB]' : 'text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]'}`
-                        }>
+                    <a href="#work" className="navBtns text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]">
                         Work
-                    </NavLink>
+                    </a>
                 </li>
                 <li>
-                    <NavLink to='/about'
-                        className={({ isActive }) =>
-                            `navBtns ${isActive ? 'text-[#6A0DAD] dark:text-[#DA54EB]' : 'text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]'}`
-                        }>
-                        About
-                    </NavLink>
+                    <a href="#certifications" className="navBtns text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]">
+                        Certifications
+                    </a>
                 </li>
                 <li>
-                    <NavLink to='/contact'
-                        className={({ isActive }) =>
-                            `navBtns ${isActive ? 'text-[#6A0DAD] dark:text-[#DA54EB]' : 'text-black dark:text-white hover:text-[#6A0DAD] dark:hover:text-[#DA54EB]'}`
-                        }>
-                        Contact
-                    </NavLink>
+                    <a href="/BetterCv.pdf" download>
+                        <button className="resumeDownloadBtn">Resume</button>
+                    </a>
+
                 </li>
-                <li>
+
+                {/* <li>
                     <button className='navBtns hover:text-[#6A0DAD] dark:hover:text-[#DA54EB] text-black dark:text-white' onClick={() => {themeToggler()}}> Toggle Theme</button>
-                </li>
+                </li> */}
             </ul>
         </nav>
     </>)
